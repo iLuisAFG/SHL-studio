@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brisa Marina Boutique | Estilo natural para tus mejores momentos</title>
+  <meta name="description" content="Ropa y accesorios inspirados en la costa. Piezas naturales, frescas y atemporales para tu día a día.">
+
+  <!-- Tipografías: Cormorant Garamond (serif elegante, logo/títulos) + Jost (sans limpia, cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <!-- Botón hamburguesa: primero en el DOM para mobile-first, se reordena con CSS -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Logotipo en texto, tipografía serif elegante -->
+      <a href="#inicio" class="logo">Brisa Marina <span class="logo-accent">Boutique</span></a>
+
+      <!-- Icono de bolsa de compras simulado, con contador de items -->
+      <button class="bag-btn" id="bag-btn" aria-label="Ver bolsa de compras">
+        <svg class="bag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M6 8h12l-1 12.5a1.5 1.5 0 0 1-1.5 1.5h-8a1.5 1.5 0 0 1-1.5-1.5L6 8Z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="bag-count" id="bag-count">0</span>
+      </button>
+
+      <!-- Menú de navegación: oculto tras hamburguesa en móvil -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#novedades" class="nav-link">Novedades</a></li>
+          <li><a href="#coleccion" class="nav-link">Colección</a></li>
+          <li><a href="#accesorios" class="nav-link">Accesorios</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Fondo oscuro que aparece detrás del menú móvil al abrirse -->
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+      <img
+        class="hero-img"
+        src="https://picsum.photos/seed/brisamarina-hero/1600/2000"
+        alt="Persona caminando en la playa usando ropa ligera de lino al atardecer"
+        loading="eager">
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Colección Primavera–Verano</p>
+        <h1 class="hero-title">Estilo natural para tus mejores momentos</h1>
+        <a href="#coleccion" class="btn btn-primary">Explorar colección</a>
+      </div>
+
+      <!-- Indicador de scroll, detalle sutil -->
+      <span class="scroll-hint" aria-hidden="true"></span>
+    </section>
+
+    <!-- ============ CATÁLOGO ============ -->
+    <section class="catalog" id="coleccion">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-eyebrow">Hecho para la brisa</p>
+          <h2 class="section-title">Nuestra colección</h2>
+        </div>
+
+        <!-- Cuadrícula de productos: 1 col móvil / 2 tablet / 3-4 escritorio -->
+        <div class="product-grid" id="product-grid">
+
+          <!-- Tarjeta 1 -->
+          <article class="product-card" data-product="Vestido Marisol">
+            <div class="product-image-wrap">
+              <img src="https://picsum.photos/seed/brisamarina-1/700/900" alt="Vestido Marisol de lino color arena" loading="lazy">
+              <span class="product-tag">Nuevo</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Vestido Marisol</h3>
+              <p class="product-desc">Lino suelto color arena, ideal para días largos de sol.</p>
+              <div class="product-footer">
+                <span class="product-price">$890 MXN</span>
+                <button class="btn-details" data-product-name="Vestido Marisol">Ver detalles</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="product-card" data-product="Blusa Caracola">
+            <div class="product-image-wrap">
+              <img src="https://picsum.photos/seed/brisamarina-2/700/900" alt="Blusa Caracola de algodón blanco" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Blusa Caracola</h3>
+              <p class="product-desc">Algodón 100% transpirable con botones de nácar.</p>
+              <div class="product-footer">
+                <span class="product-price">$620 MXN</span>
+                <button class="btn-details" data-product-name="Blusa Caracola">Ver detalles</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="product-card" data-product="Pantalón Duna">
+            <div class="product-image-wrap">
+              <img src="https://picsum.photos/seed/brisamarina-3/700/900" alt="Pantalón Duna de lino beige de corte amplio" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Pantalón Duna</h3>
+              <p class="product-desc">Corte amplio y cintura alta, comodidad total.</p>
+              <div class="product-footer">
+                <span class="product-price">$740 MXN</span>
+                <button class="btn-details" data-product-name="Pantalón Duna">Ver detalles</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4 -->
+          <article class="product-card" data-product="Kimono Horizonte">
+            <div class="product-image-wrap">
+              <img src="https://picsum.photos/seed/brisamarina-4/700/900" alt="Kimono Horizonte estampado en tonos turquesa" loading="lazy">
+              <span class="product-tag">Nuevo</span>
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Kimono Horizonte</h3>
+              <p class="product-desc">Estampado artesanal inspirado en el mar al amanecer.</p>
+              <div class="product-footer">
+                <span class="product-price">$980 MXN</span>
+                <button class="btn-details" data-product-name="Kimono Horizonte">Ver detalles</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 5 -->
+          <article class="product-card" data-product="Bolso Concha">
+            <div class="product-image-wrap">
+              <img src="https://picsum.photos/seed/brisamarina-5/700/900" alt="Bolso Concha tejido a mano en fibra natural" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Bolso Concha</h3>
+              <p class="product-desc">Tejido a mano en fibra natural, resistente y ligero.</p>
+              <div class="product-footer">
+                <span class="product-price">$540 MXN</span>
+                <button class="btn-details" data-product-name="Bolso Concha">Ver detalles</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 6 -->
+          <article class="product-card" data-product="Sandalias Costa">
+            <div class="product-image-wrap">
+              <img src="https://picsum.photos/seed/brisamarina-6/700/900" alt="Sandalias Costa de cuero natural" loading="lazy">
+            </div>
+            <div class="product-info">
+              <h3 class="product-name">Sandalias Costa</h3>
+              <p class="product-desc">Cuero natural que se suaviza con cada paso.</p>
+              <div class="product-footer">
+                <span class="product-price">$680 MXN</span>
+                <button class="btn-details" data-product-name="Sandalias Costa">Ver detalles</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HISTORIA / FILOSOFÍA ============ -->
+    <section class="philosophy">
+      <div class="container philosophy-inner">
+        <p class="section-eyebrow">Nuestra esencia</p>
+        <h2 class="philosophy-title">Ropa que respira igual que el mar</h2>
+        <p class="philosophy-text">
+          Brisa Marina nació en una casa frente al mar, cosiendo piezas para amigas que
+          querían vestir tan ligero como se sentían de vacaciones, todos los días. Elegimos
+          fibras naturales, teñidos suaves y siluetas sueltas que se mueven contigo, no en
+          tu contra. Cada pieza se produce en talleres pequeños, a paso humano.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="newsletter" id="accesorios">
+      <div class="container newsletter-inner">
+        <h2 class="newsletter-title">Novedades directo a tu correo</h2>
+        <p class="newsletter-text">Nuevas colecciones, piezas limitadas y algún descuento ocasional. Sin spam, lo prometemos.</p>
+
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <label for="newsletter-email" class="visually-hidden">Correo electrónico</label>
+          <input
+            type="email"
+            id="newsletter-email"
+            name="email"
+            placeholder="tu@correo.com"
+            required>
+          <button type="submit" class="btn btn-primary">Suscribirme</button>
+        </form>
+
+        <p class="newsletter-feedback" id="newsletter-feedback" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-col">
+        <p class="logo footer-logo">Brisa Marina <span class="logo-accent">Boutique</span></p>
+        <p class="footer-tagline">Estilo natural, hecho a paso humano.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Contacto</h3>
+        <ul class="footer-list">
+          <li><a href="mailto:hola@brisamarina.mx">hola@brisamarina.mx</a></li>
+          <li><a href="tel:+527711234567">771 123 4567</a></li>
+          <li>Costa Esmeralda, Veracruz, MX</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Síguenos</h3>
+        <ul class="footer-social">
+          <li><a href="#" aria-label="Instagram de Brisa Marina Boutique">Instagram</a></li>
+          <li><a href="#" aria-label="Pinterest de Brisa Marina Boutique">Pinterest</a></li>
+          <li><a href="#" aria-label="TikTok de Brisa Marina Boutique">TikTok</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="footer-copy">© <span id="current-year"></span> Brisa Marina Boutique. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

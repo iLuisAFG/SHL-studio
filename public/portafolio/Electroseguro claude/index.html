@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroSeguro Neza | Electricista Certificado 24/7</title>
+  <meta name="description" content="Instalaciones, reparaciones y mantenimiento eléctrico en Ciudad Nezahualcóyotl. Atención de emergencias 24/7, trabajos garantizados y licencia vigente.">
+
+  <!-- Tipografías: Space Grotesk (display, técnica/geométrica), Inter (texto), JetBrains Mono (datos/etiquetas) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+
+      <!-- Logotipo en texto -->
+      <a href="#inicio" class="logo" aria-label="ElectroSeguro Neza - Inicio">
+        <span class="logo-icon" aria-hidden="true">⚡</span>
+        <span class="logo-text">ElectroSeguro<span class="logo-accent">Neza</span></span>
+      </a>
+
+      <!-- Menú de navegación (se convierte en hamburguesa en móvil vía CSS/JS) -->
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Botón destacado de llamada, siempre visible -->
+        <a href="tel:+525512345678" class="btn btn-call">
+          <span aria-hidden="true">📞</span><span class="btn-call-text">Llamar ahora</span>
+        </a>
+
+        <!-- Botón hamburguesa: solo visible en móvil -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="main-nav">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <!-- Patrón de circuito de fondo, decorativo -->
+      <svg class="hero-circuit" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <path d="M0 120 H260 V60 H520 V180 H760 V40 H1200" class="circuit-line" />
+        <path d="M0 400 H180 V520 H460 V360 H900 V620 H1200" class="circuit-line circuit-line--alt" />
+        <circle cx="260" cy="120" r="5" class="circuit-node" />
+        <circle cx="520" cy="180" r="5" class="circuit-node" />
+        <circle cx="760" cy="40" r="5" class="circuit-node" />
+        <circle cx="460" cy="360" r="5" class="circuit-node" />
+        <circle cx="900" cy="620" r="5" class="circuit-node" />
+      </svg>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+
+          <!-- Indicador de estado en vivo: elemento distintivo de marca -->
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            Guardia en línea ahora — respuesta en menos de 30 min
+          </div>
+
+          <h1 class="hero-title">
+            Soluciones eléctricas rápidas y seguras <span class="hero-title-accent">en tu zona</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Electricistas certificados en Ciudad Nezahualcóyotl, listos para emergencias
+            las 24 horas. Diagnóstico honesto, trabajo garantizado por escrito y sin sorpresas
+            en el recibo.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contacto" class="btn btn-primary">Pedir presupuesto</a>
+            <a href="#servicios" class="btn btn-secondary">Nuestros servicios</a>
+          </div>
+
+          <!-- Franja de confianza rápida -->
+          <ul class="hero-trust-strip">
+            <li><strong>15+</strong> años de experiencia</li>
+            <li><strong>24/7</strong> atención a emergencias</li>
+            <li><strong>100%</strong> licencia vigente</li>
+          </ul>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="services" id="servicios">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="section-eyebrow">/// Panel de servicios</p>
+          <h2 class="section-title">Lo que resolvemos en tu casa o negocio</h2>
+          <p class="section-description">
+            Desde una instalación nueva hasta un apagón a medianoche, cubrimos
+            todo el circuito: instalación, reparación y mantenimiento preventivo.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Tarjeta 1 -->
+          <article class="service-card">
+            <span class="service-card-index">01</span>
+            <span class="service-icon" aria-hidden="true">🔌</span>
+            <h3 class="service-title">Instalaciones</h3>
+            <p class="service-description">
+              Cableado nuevo, contactos, apagadores, centros de carga y ampliación
+              de circuitos para casas, remodelaciones y locales comerciales.
+            </p>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="service-card service-card--highlight">
+            <span class="service-card-index">02</span>
+            <span class="service-icon" aria-hidden="true">🚨</span>
+            <h3 class="service-title">Reparaciones 24/7</h3>
+            <p class="service-description">
+              Corto circuito, apagones, olor a quemado o chispazos. Salimos de
+              emergencia cualquier día del año, incluidas madrugadas.
+            </p>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="service-card">
+            <span class="service-card-index">03</span>
+            <span class="service-icon" aria-hidden="true">🛠️</span>
+            <h3 class="service-title">Mantenimiento</h3>
+            <p class="service-description">
+              Revisión periódica de instalaciones, detección de riesgos ocultos
+              y certificado de estado para tu casa, oficina o edificio.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE NOSOTROS / CONFIANZA ============ -->
+    <section class="about" id="nosotros">
+      <div class="container about-inner">
+
+        <div class="about-content">
+          <p class="section-eyebrow">/// Por qué elegirnos</p>
+          <h2 class="section-title">Un electricista de la zona, no un extraño con herramientas</h2>
+          <p class="about-text">
+            Llevamos más de 15 años resolviendo instalaciones y emergencias eléctricas
+            en Ciudad Nezahualcóyotl y alrededores. Cada trabajo sale con garantía por
+            escrito, materiales de calidad y un presupuesto claro antes de tocar un solo cable.
+            Trabajamos con licencia y certificaciones vigentes, así que tu instalación queda
+            en regla, no solo funcionando.
+          </p>
+
+          <ul class="about-facts">
+            <li class="about-fact">
+              <span class="about-fact-number">15+</span>
+              <span class="about-fact-label">Años de experiencia comprobable en la zona</span>
+            </li>
+            <li class="about-fact">
+              <span class="about-fact-number">100%</span>
+              <span class="about-fact-label">Trabajos con garantía por escrito</span>
+            </li>
+            <li class="about-fact">
+              <span class="about-fact-number">✓</span>
+              <span class="about-fact-label">Licencia y certificaciones al día</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Panel visual tipo "breaker" decorativo -->
+        <div class="about-visual" aria-hidden="true">
+          <div class="breaker-panel">
+            <div class="breaker-panel-header">
+              <span>PANEL / ESTADO</span>
+              <span class="status-dot status-dot--small"></span>
+            </div>
+            <ul class="breaker-list">
+              <li><span>Licencia vigente</span><span class="breaker-switch is-on"></span></li>
+              <li><span>Garantía por escrito</span><span class="breaker-switch is-on"></span></li>
+              <li><span>Guardia de emergencia</span><span class="breaker-switch is-on"></span></li>
+              <li><span>15 años en Neza</span><span class="breaker-switch is-on"></span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="contact" id="contacto">
+      <div class="container contact-inner">
+
+        <div class="contact-info">
+          <p class="section-eyebrow section-eyebrow--light">/// Hablemos</p>
+          <h2 class="section-title section-title--light">Pide tu presupuesto sin compromiso</h2>
+          <p class="contact-lead">
+            Cuéntanos qué necesitas y te respondemos el mismo día. Si es una
+            emergencia, mejor llámanos directo.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-list-label">Teléfono</span>
+              <a href="tel:+525512345678">55 1234 5678</a>
+            </li>
+            <li>
+              <span class="contact-list-label">WhatsApp</span>
+              <a href="https://wa.me/525512345678" target="_blank" rel="noopener">55 1234 5678</a>
+            </li>
+            <li>
+              <span class="contact-list-label">Email</span>
+              <a href="mailto:contacto@electroseguroneza.mx">contacto@electroseguroneza.mx</a>
+            </li>
+            <li>
+              <span class="contact-list-label">Zona de cobertura</span>
+              <span>Ciudad Nezahualcóyotl y alrededores</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <form class="contact-form" id="contact-form" novalidate>
+          <h3 class="contact-form-title">Solicitar presupuesto</h3>
+
+          <div class="form-field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+          </div>
+
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="55 1234 5678" required>
+          </div>
+
+          <div class="form-field">
+            <label for="servicio">Servicio requerido</label>
+            <select id="servicio" name="servicio" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="instalacion">Instalación</option>
+              <option value="reparacion">Reparación de emergencia</option>
+              <option value="mantenimiento">Mantenimiento</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Enviar solicitud</button>
+
+          <!-- Aquí el JS insertará el mensaje de éxito simulado -->
+          <div class="form-feedback" id="form-feedback" role="status" aria-live="polite"></div>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <span class="logo-icon" aria-hidden="true">⚡</span>
+        <span class="logo-text">ElectroSeguro<span class="logo-accent">Neza</span></span>
+      </div>
+
+      <nav class="footer-links" aria-label="Enlaces rápidos">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="tel:+525512345678">Llamar ahora</a>
+      </nav>
+
+      <p class="footer-copy">© <span id="current-year"></span> ElectroSeguro Neza. Todos los derechos reservados.</p>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

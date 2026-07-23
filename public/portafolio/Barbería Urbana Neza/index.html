@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbería Urbana Neza | Portal de Reservas</title>
+  <meta name="description" content="Reserva tu cita en Barbería Urbana Neza en minutos: elige servicio, barbero, fecha y hora.">
+
+  <!-- Tipografía: Plus Jakarta Sans, look de app moderna, un solo peso variable de familia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER FIJO ============ -->
+  <header class="app-header">
+    <div class="app-header-inner">
+
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">✂️</span>
+        <span class="brand-text">Barbería Urbana <span class="brand-accent">Neza</span></span>
+      </div>
+
+      <div class="user-block">
+        <span class="user-greeting">Hola, <strong>Cliente</strong></span>
+        <button class="profile-btn" aria-label="Ver perfil">
+          <span class="profile-avatar">C</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============ DASHBOARD PRINCIPAL ============ -->
+  <!-- Grid de 2 columnas en escritorio, apilado en móvil (ver style.css) -->
+  <main class="dashboard">
+
+    <!-- ================= COLUMNA IZQUIERDA: SELECCIÓN ================= -->
+    <section class="selection-area" aria-label="Selecciona los detalles de tu cita">
+
+      <!-- ----- PASO 1: SERVICIO ----- -->
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-number">1</span>
+          <h2 class="step-title">Selecciona tu servicio</h2>
+        </div>
+
+        <!-- Grid de tarjetas de servicio. data-* guarda la info que usará script.js -->
+        <div class="service-grid" id="service-grid">
+
+          <button class="option-card service-card" data-group="servicio"
+                  data-name="Corte Clásico" data-price="180" data-duration="30 min">
+            <span class="service-icon" aria-hidden="true">💈</span>
+            <span class="option-name">Corte Clásico</span>
+            <span class="option-meta">
+              <span class="option-price">$180</span>
+              <span class="option-duration">30 min</span>
+            </span>
+          </button>
+
+          <button class="option-card service-card" data-group="servicio"
+                  data-name="Corte + Barba" data-price="350" data-duration="50 min">
+            <span class="service-icon" aria-hidden="true">🪒</span>
+            <span class="option-name">Corte + Barba</span>
+            <span class="option-meta">
+              <span class="option-price">$350</span>
+              <span class="option-duration">50 min</span>
+            </span>
+          </button>
+
+          <button class="option-card service-card" data-group="servicio"
+                  data-name="Perfilado de Barba" data-price="120" data-duration="20 min">
+            <span class="service-icon" aria-hidden="true">✨</span>
+            <span class="option-name">Perfilado</span>
+            <span class="option-meta">
+              <span class="option-price">$120</span>
+              <span class="option-duration">20 min</span>
+            </span>
+          </button>
+
+          <button class="option-card service-card" data-group="servicio"
+                  data-name="Corte Niño" data-price="150" data-duration="25 min">
+            <span class="service-icon" aria-hidden="true">🧒</span>
+            <span class="option-name">Corte Niño</span>
+            <span class="option-meta">
+              <span class="option-price">$150</span>
+              <span class="option-duration">25 min</span>
+            </span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- ----- PASO 2: BARBERO ----- -->
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-number">2</span>
+          <h2 class="step-title">Elige a tu barbero</h2>
+        </div>
+
+        <div class="barber-grid" id="barber-grid">
+
+          <button class="option-card barber-card" data-group="barbero" data-name="Beto Reyes">
+            <span class="barber-avatar">BR</span>
+            <span class="option-name">Beto Reyes</span>
+          </button>
+
+          <button class="option-card barber-card" data-group="barbero" data-name="Ale Cortés">
+            <span class="barber-avatar">AC</span>
+            <span class="option-name">Ale Cortés</span>
+          </button>
+
+          <button class="option-card barber-card" data-group="barbero" data-name="Memo Ruiz">
+            <span class="barber-avatar">MR</span>
+            <span class="option-name">Memo Ruiz</span>
+          </button>
+
+          <button class="option-card barber-card" data-group="barbero" data-name="Cualquiera disponible">
+            <span class="barber-avatar barber-avatar--any" aria-hidden="true">★</span>
+            <span class="option-name">Cualquiera</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- ----- PASO 3: FECHA Y HORA ----- -->
+      <div class="step-card">
+        <div class="step-header">
+          <span class="step-number">3</span>
+          <h2 class="step-title">Fecha y hora</h2>
+        </div>
+
+        <div class="form-field date-field">
+          <label for="fecha-cita">Fecha</label>
+          <input type="date" id="fecha-cita" name="fecha-cita">
+        </div>
+
+        <p class="time-label">Horarios disponibles</p>
+        <div class="time-grid" id="time-grid">
+          <button class="option-card time-pill" data-group="hora" data-name="10:00 AM">10:00 AM</button>
+          <button class="option-card time-pill" data-group="hora" data-name="11:30 AM">11:30 AM</button>
+          <button class="option-card time-pill" data-group="hora" data-name="12:30 PM">12:30 PM</button>
+          <button class="option-card time-pill" data-group="hora" data-name="02:00 PM">02:00 PM</button>
+          <button class="option-card time-pill" data-group="hora" data-name="04:00 PM">04:00 PM</button>
+          <button class="option-card time-pill" data-group="hora" data-name="05:30 PM">05:30 PM</button>
+          <button class="option-card time-pill is-full" data-group="hora" data-name="07:00 PM" disabled>07:00 PM</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= COLUMNA DERECHA: RESUMEN ================= -->
+    <!-- En móvil se convierte en una barra fija inferior (ver style.css) -->
+    <aside class="summary-panel" id="summary-panel" aria-label="Resumen de tu cita">
+
+      <h2 class="summary-title">Resumen de tu cita</h2>
+
+      <ul class="summary-list">
+        <li class="summary-row">
+          <span class="summary-label">Servicio</span>
+          <span class="summary-value" id="summary-service">No seleccionado</span>
+        </li>
+        <li class="summary-row">
+          <span class="summary-label">Barbero</span>
+          <span class="summary-value" id="summary-barber">No seleccionado</span>
+        </li>
+        <li class="summary-row">
+          <span class="summary-label">Fecha</span>
+          <span class="summary-value" id="summary-date">No seleccionada</span>
+        </li>
+        <li class="summary-row">
+          <span class="summary-label">Hora</span>
+          <span class="summary-value" id="summary-time">No seleccionada</span>
+        </li>
+      </ul>
+
+      <div class="summary-total">
+        <span>Total</span>
+        <span class="summary-total-amount" id="summary-total">$0</span>
+      </div>
+
+      <button class="btn-confirm" id="confirm-btn">Confirmar reserva</button>
+
+      <!-- Mensaje de éxito / error generado por JS -->
+      <p class="summary-feedback" id="summary-feedback" role="status" aria-live="polite"></p>
+
+    </aside>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

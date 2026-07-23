@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wings King — Alitas y Hamburguesas al Fuego</title>
+<meta name="description" content="Wings King: alitas flameadas y hamburguesas de autor. Menú, ubicación y horarios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="embers" id="embers" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <svg class="brand-mark" viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+      <path class="mark-flame" d="M32 4c3 8-4 10-4 17 0 4 3 6 6 6 4 0 7-3 7-8 6 5 9 12 9 18 0 12-9 21-21 18C18 53 9 45 9 33 9 22 18 15 22 8c1 4-1 7 1 10 2-6 5-9 9-14z"/>
+    </svg>
+    <span>WINGS<em>KING</em></span>
+  </a>
+  <nav class="nav-links">
+    <a href="#menu">Menú</a>
+    <a href="#carta">Carta PDF</a>
+    <a href="#historia">Historia</a>
+    <a href="#ubicacion">Ubicación</a>
+  </nav>
+  <a class="nav-cta" href="#carta">Ver la carta</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Alitas flameadas · Hamburguesas de autor · Corona, TX (ficticio)</p>
+      <h1 class="hero-title">
+        <span class="line">SE ARRODILLAN</span>
+        <span class="line accent">ANTE LA SALSA</span>
+      </h1>
+      <p class="hero-sub">Alitas marcadas al carbón, glaseadas hasta que brillan, y hamburguesas apiladas sin vergüenza. Wings King no sirve alitas — corona reinados de sabor.</p>
+      <div class="hero-actions">
+        <a href="#carta" class="btn btn-primary">Abrir la carta interactiva</a>
+        <a href="#menu" class="btn btn-ghost">Ver destacados</a>
+      </div>
+      <div class="spice-meter" role="group" aria-label="Escala de picante del local">
+        <span class="spice-label">Escala de picor de la casa</span>
+        <div class="spice-flames">
+          <svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg>
+          <svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg>
+          <svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg>
+          <svg viewBox="0 0 24 24" class="s-flame"><use href="#flameIcon"/></svg>
+          <svg viewBox="0 0 24 24" class="s-flame"><use href="#flameIcon"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="hero-crown" aria-hidden="true">
+      <svg viewBox="0 0 200 140" width="100%" height="100%">
+        <path class="crown-path" d="M20 120 L10 40 L55 75 L100 20 L145 75 L190 40 L180 120 Z"/>
+        <circle class="crown-jewel" cx="100" cy="45" r="7"/>
+        <circle class="crown-jewel small" cx="35" cy="65" r="4"/>
+        <circle class="crown-jewel small" cx="165" cy="65" r="4"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="ticker" aria-hidden="true">
+    <div class="ticker-strip">
+      <div class="ticker-track">
+        <span>ALITAS BUFFALO&nbsp;&nbsp;★&nbsp;&nbsp;BBQ MIEL PICANTE&nbsp;&nbsp;★&nbsp;&nbsp;CORONA BURGER&nbsp;&nbsp;★&nbsp;&nbsp;MANGO HABANERO&nbsp;&nbsp;★&nbsp;&nbsp;DOBLE CORONA&nbsp;&nbsp;★&nbsp;&nbsp;GARLIC PARMESAN&nbsp;&nbsp;★&nbsp;&nbsp;</span>
+        <span>ALITAS BUFFALO&nbsp;&nbsp;★&nbsp;&nbsp;BBQ MIEL PICANTE&nbsp;&nbsp;★&nbsp;&nbsp;CORONA BURGER&nbsp;&nbsp;★&nbsp;&nbsp;MANGO HABANERO&nbsp;&nbsp;★&nbsp;&nbsp;DOBLE CORONA&nbsp;&nbsp;★&nbsp;&nbsp;GARLIC PARMESAN&nbsp;&nbsp;★&nbsp;&nbsp;</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <div class="section-head reveal">
+      <p class="eyebrow">La corte real</p>
+      <h2>Destacados del reino</h2>
+      <p class="section-sub">Cuatro platos, cero compromisos. La carta completa está un poco más abajo, en formato interactivo.</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <article class="menu-card reveal">
+        <div class="card-top">
+          <svg class="dish-icon" viewBox="0 0 64 64"><use href="#wingIcon"/></svg>
+          <span class="price">$9.50</span>
+        </div>
+        <h3>Alitas Buffalo Clásicas</h3>
+        <p>Fritas dos veces, bañadas en salsa buffalo de mantequilla y ají cayena. El estándar por el que se mide todo lo demás.</p>
+        <div class="spice-flames sm"><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame"><use href="#flameIcon"/></svg></div>
+      </article>
+
+      <article class="menu-card reveal">
+        <div class="card-top">
+          <svg class="dish-icon" viewBox="0 0 64 64"><use href="#wingIcon"/></svg>
+          <span class="price">$10.75</span>
+        </div>
+        <h3>Mango Habanero</h3>
+        <p>Dulce al primer bocado, filosa al segundo. Glaseado de mango fresco con habanero asado y un toque de lima.</p>
+        <div class="spice-flames sm"><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg></div>
+      </article>
+
+      <article class="menu-card reveal">
+        <div class="card-top">
+          <svg class="dish-icon" viewBox="0 0 64 64"><use href="#burgerIcon"/></svg>
+          <span class="price">$11.90</span>
+        </div>
+        <h3>Corona Burger</h3>
+        <p>Doble carne, queso cheddar fundido, cebolla caramelizada y salsa corona de la casa en pan brioche tostado.</p>
+        <div class="spice-flames sm"><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame"><use href="#flameIcon"/></svg></div>
+      </article>
+
+      <article class="menu-card reveal">
+        <div class="card-top">
+          <svg class="dish-icon" viewBox="0 0 64 64"><use href="#burgerIcon"/></svg>
+          <span class="price">$14.25</span>
+        </div>
+        <h3>Doble Corona</h3>
+        <p>Para quienes reinan con hambre real: dos carnes, tocino ahumado, queso pepper jack y jalapeños encurtidos.</p>
+        <div class="spice-flames sm"><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame on"><use href="#flameIcon"/></svg><svg viewBox="0 0 24 24" class="s-flame"><use href="#flameIcon"/></svg></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="carta" id="carta">
+    <div class="section-head reveal">
+      <p class="eyebrow">Carta completa</p>
+      <h2>Hojea el menú entero</h2>
+      <p class="section-sub">Este visor muestra el PDF de la carta directamente en la página. Navega, haz zoom o descárgalo para verlo offline.</p>
+    </div>
+
+    <div class="pdf-frame reveal">
+      <div class="pdf-toolbar">
+        <span class="pdf-dot" aria-hidden="true"></span>
+        <span class="pdf-filename">carta-wings-king.pdf</span>
+        <a href="assets/menu.pdf" download class="pdf-download">Descargar PDF</a>
+      </div>
+      <object class="pdf-object" data="assets/menu.pdf" type="application/pdf">
+        <div class="pdf-fallback">
+          <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true"><use href="#fileIcon"/></svg>
+          <p>No se pudo mostrar el PDF en este navegador.</p>
+          <a href="assets/menu.pdf" class="btn btn-primary" download>Descargar la carta</a>
+        </div>
+      </object>
+    </div>
+    
+  </section>
+
+  <section class="historia" id="historia">
+    <div class="historia-media reveal" aria-hidden="true">
+      <svg viewBox="0 0 200 200" width="100%" height="100%">
+        <circle cx="100" cy="100" r="92" class="historia-ring"/>
+        <use href="#wingIcon" x="46" y="40" width="55" height="55" class="historia-icon"/>
+        <use href="#burgerIcon" x="100" y="100" width="55" height="55" class="historia-icon"/>
+      </svg>
+    </div>
+    <div class="historia-copy reveal">
+      <p class="eyebrow">Cómo empezó</p>
+      <h2>De un carrito a una corona</h2>
+      <p>Wings King nació en 2016 de un carrito de comida estacionado afuera de un taller mecánico. La receta de salsa corona corrió de boca en boca hasta que las filas eran más largas que la cuadra.</p>
+      <p>Hoy seguimos cocinando igual: al carbón, en tandas pequeñas, sin atajos. Cada alita se fríe dos veces y cada hamburguesa se prensa a mano en la plancha.</p>
+      <ul class="stats">
+        <li><strong>2016</strong><span>Primer carrito</span></li>
+        <li><strong>7</strong><span>Salsas de la casa</span></li>
+        <li><strong>0</strong><span>Atajos tomados</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ubicacion" id="ubicacion">
+    <div class="ubicacion-inner reveal">
+      <div class="ubi-info">
+        <p class="eyebrow">Visítanos</p>
+        <h2>Encuentra tu trono</h2>
+        <dl class="ubi-list">
+          <div><dt>Dirección</dt><dd>Av. del Fuego 214, Corona, TX (ficticio)</dd></div>
+          <div><dt>Teléfono</dt><dd>(555) 014-9922</dd></div>
+          <div><dt>Horario</dt><dd>Lun–Jue 12:00–22:00<br>Vie–Sáb 12:00–00:00<br>Dom 12:00–21:00</dd></div>
+        </dl>
+        <a href="#carta" class="btn btn-ghost">Pedir para llevar</a>
+      </div>
+      <div class="ubi-map" aria-hidden="true">
+        <svg viewBox="0 0 220 220" width="100%" height="100%">
+          <rect x="0" y="0" width="220" height="220" rx="18" class="map-bg"/>
+          <path d="M0 60 H220 M0 130 H220 M70 0 V220 M150 0 V220" class="map-grid"/>
+          <circle cx="70" cy="60" r="6" class="map-pin"/>
+          <path d="M70 60 c0 -20 20 -20 20 0 c0 14 -20 30 -20 30 s-20 -16 -20 -30 c0 -20 20 -20 20 0z" class="map-pin-shape" transform="translate(0,-4)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-brand">
+    <svg class="brand-mark" viewBox="0 0 64 64" width="26" height="26" aria-hidden="true"><path class="mark-flame" d="M32 4c3 8-4 10-4 17 0 4 3 6 6 6 4 0 7-3 7-8 6 5 9 12 9 18 0 12-9 21-21 18C18 53 9 45 9 33 9 22 18 15 22 8c1 4-1 7 1 10 2-6 5-9 9-14z"/></svg>
+    <span>WINGS<em>KING</em></span>
+  </div>
+  <p class="footer-note">Restaurante ficticio creado como proyecto de portafolio. Sin afiliación con marcas reales.</p>
+</footer>
+
+<!-- Sprite de íconos SVG reutilizados -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="flameIcon" viewBox="0 0 24 24"><path d="M12 2c1 3-2 4-2 7 0 1.7 1.3 3 3 3 1.9 0 3-1.4 3-3.4 2.6 2 4 5 4 7.6 0 4.4-3.6 8-8 8s-8-3.6-8-8c0-4 2.4-6.8 4-9.2.4 1.5-.4 2.6.4 3.8 1-2.4 2.2-3.6 3.6-8.8z"/></symbol>
+    <symbol id="wingIcon" viewBox="0 0 64 64"><path d="M20 12c8-4 20-2 24 8 3 8-2 16-10 18-2 6-8 10-14 8-7-2-9-10-5-16-6-3-8-11-3-16 2-2 5-3 8-2z"/><circle cx="24" cy="24" r="3"/></symbol>
+    <symbol id="burgerIcon" viewBox="0 0 64 64"><path d="M10 26c0-9 10-16 22-16s22 7 22 16H10z"/><rect x="9" y="30" width="46" height="7" rx="3"/><path d="M12 41c0 6 9 11 20 11s20-5 20-11H12z"/><rect x="9" y="44" width="46" height="6" rx="3"/></symbol>
+    <symbol id="fileIcon" viewBox="0 0 64 64"><path d="M14 4h26l10 10v46H14z" fill="none" stroke="currentColor" stroke-width="3"/><path d="M40 4v10h10" fill="none" stroke="currentColor" stroke-width="3"/></symbol>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>

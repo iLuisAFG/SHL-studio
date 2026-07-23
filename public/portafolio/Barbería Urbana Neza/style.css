@@ -1,0 +1,502 @@
+/* =========================================================
+   BARBERÍA URBANA NEZA — style.css
+   Portal de Reservas — look de app nativa, Dark Mode premium
+   Paleta: carbón/negro + acento dorado/ámbar
+   Tipografía: Plus Jakarta Sans (UI) + JetBrains Mono (precios/horas)
+   ========================================================= */
+
+/* ---------- 1. VARIABLES CSS (tokens de diseño) ---------- */
+:root {
+  /* Color: dark theme premium */
+  --carbon-950: #0b0b0d;   /* fondo general de la app */
+  --carbon-900: #16161a;   /* superficie de tarjetas */
+  --carbon-800: #201f25;   /* superficie elevada / hover */
+  --carbon-700: #2d2c33;   /* bordes sutiles */
+  --texto-claro: #f5f4f2;  /* texto principal */
+  --texto-gris: #9c99a3;   /* texto secundario */
+  --dorado: #e3b341;       /* acento premium principal */
+  --dorado-suave: rgba(227, 179, 65, 0.14); /* fondo iluminado al seleccionar */
+  --verde-ok: #3ecf8e;
+
+  /* Tipografía */
+  --font-ui: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* Layout */
+  --max-width: 1160px;
+  --radio-sm: 10px;
+  --radio-md: 16px;
+  --header-height: 68px;
+  --transicion: 0.2s ease;
+}
+
+/* ---------- 2. RESET BÁSICO ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--carbon-950);
+  color: var(--texto-claro);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 96px; /* espacio para la barra de resumen fija en móvil */
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--dorado);
+  outline-offset: 2px;
+}
+
+h1, h2 {
+  font-family: var(--font-ui);
+}
+
+/* ---------- 3. HEADER FIJO ---------- */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--header-height);
+  background: rgba(11, 11, 13, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--carbon-700);
+}
+
+.app-header-inner {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  height: 100%;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.brand-accent {
+  color: var(--dorado);
+}
+
+.user-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-greeting {
+  font-size: 0.88rem;
+  color: var(--texto-gris);
+}
+.user-greeting strong {
+  color: var(--texto-claro);
+}
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--dorado);
+  color: var(--carbon-950);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ---------- 4. DASHBOARD: GRID PRINCIPAL ---------- */
+.dashboard {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 24px 20px 40px;
+
+  /* Mobile-first: una sola columna apilada */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ---------- 5. TARJETAS DE PASO ---------- */
+.step-card {
+  background: var(--carbon-900);
+  border: 1px solid var(--carbon-700);
+  border-radius: var(--radio-md);
+  padding: 22px;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.step-number {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--dorado-suave);
+  color: var(--dorado);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* ---------- 6. ELEMENTO SELECCIONABLE BASE (.option-card) ---------- */
+/* Estilo compartido entre servicio / barbero / hora, cada uno lo extiende */
+.option-card {
+  background: var(--carbon-800);
+  border: 1.5px solid var(--carbon-700);
+  border-radius: var(--radio-sm);
+  transition: border-color var(--transicion), background var(--transicion), transform var(--transicion);
+  text-align: left;
+}
+
+.option-card:hover {
+  border-color: rgba(227, 179, 65, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ESTADO SELECCIONADO — requerimiento clave del brief.
+   Se aplica vía JS a servicio, barbero u horario elegido. */
+.option-card.selected {
+  border-color: var(--dorado);
+  background: var(--dorado-suave);
+  box-shadow: 0 0 0 1px var(--dorado);
+}
+
+.option-card:disabled,
+.option-card.is-full {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+.option-card:disabled:hover,
+.option-card.is-full:hover {
+  border-color: var(--carbon-700);
+  transform: none;
+}
+
+/* ----- 6.1 Tarjetas de servicio ----- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.service-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.service-icon {
+  font-size: 1.5rem;
+}
+
+.option-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.option-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--texto-gris);
+}
+
+.option-price {
+  color: var(--dorado);
+  font-weight: 600;
+}
+
+.service-card.selected .option-meta {
+  color: var(--texto-claro);
+}
+
+/* ----- 6.2 Tarjetas de barbero (circulares) ----- */
+.barber-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.barber-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 10px;
+  text-align: center;
+}
+
+.barber-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--carbon-700);
+  color: var(--texto-claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  transition: border-color var(--transicion);
+}
+
+.barber-avatar--any {
+  background: var(--dorado-suave);
+  color: var(--dorado);
+}
+
+.barber-card.selected .barber-avatar {
+  border-color: var(--dorado);
+}
+
+/* ----- 6.3 Fecha ----- */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  color: var(--texto-gris);
+  font-weight: 600;
+}
+
+.date-field input {
+  background: var(--carbon-800);
+  border: 1.5px solid var(--carbon-700);
+  border-radius: var(--radio-sm);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  color-scheme: dark; /* el selector nativo de fecha respeta el tema oscuro */
+  transition: border-color var(--transicion);
+}
+.date-field input:hover,
+.date-field input:focus {
+  border-color: var(--dorado);
+}
+
+/* ----- 6.4 Horarios tipo píldora ----- */
+.time-label {
+  font-size: 0.85rem;
+  color: var(--texto-gris);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.time-pill {
+  padding: 12px 10px;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 0.88rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* ---------- 7. PANEL DE RESUMEN ---------- */
+.summary-panel {
+  background: var(--carbon-900);
+  border: 1px solid var(--carbon-700);
+  border-radius: var(--radio-md);
+  padding: 22px;
+
+  /* Mobile-first: barra fija al fondo de la pantalla */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  border-radius: var(--radio-md) var(--radio-md) 0 0;
+  box-shadow: 0 -12px 30px -14px rgba(0, 0, 0, 0.6);
+}
+
+.summary-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed var(--carbon-700);
+  padding-bottom: 8px;
+}
+
+.summary-label {
+  color: var(--texto-gris);
+}
+
+.summary-value {
+  font-weight: 600;
+  text-align: right;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.summary-total-amount {
+  font-family: var(--font-mono);
+  color: var(--dorado);
+  font-size: 1.3rem;
+}
+
+.btn-confirm {
+  width: 100%;
+  background: var(--dorado);
+  color: var(--carbon-950);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 16px;
+  border-radius: var(--radio-sm);
+  transition: filter var(--transicion), transform var(--transicion);
+}
+.btn-confirm:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+.btn-confirm:active {
+  transform: translateY(0);
+}
+.btn-confirm:disabled {
+  background: var(--verde-ok);
+  color: var(--carbon-950);
+  cursor: default;
+  filter: none;
+  transform: none;
+}
+
+.summary-feedback {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  min-height: 1.2em;
+}
+.summary-feedback.is-success {
+  color: var(--verde-ok);
+}
+.summary-feedback.is-error {
+  color: #ff6b6b;
+}
+
+/* =========================================================
+   8. MEDIA QUERIES — RESPONSIVIDAD
+   ========================================================= */
+
+/* Tablet (≥ 700px): la cuadrícula de servicios y horarios gana columnas,
+   pero el resumen sigue siendo barra fija abajo */
+@media (min-width: 700px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .barber-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .time-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Escritorio (≥ 1000px): dashboard de 2 columnas real,
+   el resumen deja de ser barra fija y se vuelve panel lateral pegajoso */
+@media (min-width: 1000px) {
+  body {
+    padding-bottom: 0;
+  }
+
+  .dashboard {
+    grid-template-columns: 1.6fr 0.9fr;
+    align-items: start;
+    gap: 28px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .summary-panel {
+    position: sticky;
+    top: calc(var(--header-height) + 24px);
+    left: auto;
+    right: auto;
+    bottom: auto;
+    border-radius: var(--radio-md);
+    box-shadow: none;
+  }
+}
+
+/* Escritorio grande (≥ 1280px): servicios a 4 columnas para aprovechar el ancho */
+@media (min-width: 1280px) {
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
