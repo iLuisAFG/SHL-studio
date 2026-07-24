@@ -1,9 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Globe, Mail, MessageSquare, Phone } from "lucide-react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xbdnzkoo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contacto" className="py-24 relative">
       <div className="max-w-5xl mx-auto px-6">
@@ -62,12 +95,16 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="text-sm text-shl-secondary font-medium ml-1">Nombre Completo</label>
                 <input 
                   type="text" 
                   id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                   placeholder="Ej. Jane Doe"
                   className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white placeholder-shl-secondary/50 focus:outline-none focus:border-shl-accent focus:ring-1 focus:ring-shl-accent transition-all"
                 />
@@ -78,6 +115,10 @@ export default function Contact() {
                 <input 
                   type="email" 
                   id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                   placeholder="jane@ejemplo.com"
                   className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white placeholder-shl-secondary/50 focus:outline-none focus:border-shl-accent focus:ring-1 focus:ring-shl-accent transition-all"
                 />
@@ -87,19 +128,33 @@ export default function Contact() {
                 <label htmlFor="message" className="text-sm text-shl-secondary font-medium ml-1">Mensaje</label>
                 <textarea 
                   id="message"
+                  name="message"
+                  required
                   rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                   placeholder="Háblanos de tu proyecto..."
                   className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white placeholder-shl-secondary/50 focus:outline-none focus:border-shl-accent focus:ring-1 focus:ring-shl-accent transition-all resize-none"
                 />
               </div>
 
-              <button 
-                type="submit"
-                className="group flex items-center justify-center gap-2 w-full mt-2 bg-shl-accent text-white rounded-xl py-4 font-semibold hover:bg-shl-accent-hover transition-colors neon-shadow"
-              >
-                Enviar Mensaje
-                <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <div className="flex flex-col gap-2">
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`group flex items-center justify-center gap-2 w-full mt-2 bg-shl-accent text-white rounded-xl py-4 font-semibold hover:bg-shl-accent-hover transition-colors neon-shadow ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+                  {!isSubmitting && <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                </button>
+                
+                {submitStatus === "success" && (
+                  <p className="text-green-400 text-sm text-center mt-1 font-medium">¡Mensaje enviado con éxito! Te contactaremos pronto.</p>
+                )}
+                {submitStatus === "error" && (
+                  <p className="text-red-400 text-sm text-center mt-1 font-medium">Hubo un error al enviar el mensaje. Intenta de nuevo.</p>
+                )}
+              </div>
             </form>
           </motion.div>
 
