@@ -19,11 +19,11 @@ export default function About() {
             className="flex-1"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              El dúo dinámico detrás de <br />
+              El equipo de expertos detrás de <br />
               <span className="text-shl-accent font-mono tracking-tight mt-2 inline-block">&lt;SHL Studio /&gt;</span>
             </h2>
             <p className="text-shl-secondary text-lg leading-relaxed mb-6">
-              Somos dos amigos apasionados por la tecnología y el diseño. Combinamos nuestra experiencia en ingeniería de software y estética visual para crear productos digitales que destacan en un mercado competitivo.
+              Somos un equipo apasionado por la tecnología y el diseño. Combinamos nuestra experiencia en ingeniería de software y estética visual para crear productos digitales que destacan en un mercado competitivo.
             </p>
             <p className="text-shl-secondary text-lg leading-relaxed">
               Nuestro enfoque es simple: <strong className="text-white font-medium">escalar marcas a través de código limpio y diseño excepcional.</strong> No usamos plantillas genéricas; construimos herramientas hechas a medida para impulsar tu negocio.
@@ -37,12 +37,13 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-full md:w-[400px] aspect-square rounded-2xl bg-gradient-to-br from-shl-background via-white/5 to-shl-accent/10 border border-white/10 flex items-center justify-center relative overflow-hidden"
           >
-            {/* Abstract tech representation for the duo */}
+            {/* Abstract tech representation for the team */}
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-overlay grayscale"></div>
             
-            <div className="relative z-10 flex gap-4">
-              <div className="w-16 h-32 rounded-full border border-shl-accent/40 bg-shl-accent/10 backdrop-blur-md animate-[pulse_4s_ease-in-out_infinite]" />
-              <div className="w-16 h-40 rounded-full border border-shl-accent/60 bg-shl-accent/20 backdrop-blur-md translate-y-4 animate-[pulse_4s_ease-in-out_infinite_1s]" />
+            <div className="relative z-10 flex gap-4 items-center">
+              <div className="w-12 h-28 rounded-full border border-shl-accent/40 bg-shl-accent/10 backdrop-blur-md animate-[pulse_4s_ease-in-out_infinite]" />
+              <div className="w-12 h-36 rounded-full border border-shl-accent/60 bg-shl-accent/20 backdrop-blur-md translate-y-2 animate-[pulse_4s_ease-in-out_infinite_1s]" />
+              <div className="w-12 h-28 rounded-full border border-shl-accent/40 bg-shl-accent/10 backdrop-blur-md animate-[pulse_4s_ease-in-out_infinite_2s]" />
             </div>
           </motion.div>
           
