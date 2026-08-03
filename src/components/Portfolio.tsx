@@ -3,55 +3,56 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Armado de PCs a Medida",
     category: "Custom Core",
     description: "Landing page interactiva para cotizar y diseñar computadoras personalizadas ajustadas al presupuesto del cliente.",
-    gradient: "from-teal-600 to-orange-500",
+    image: "/portafolio/covers/Armado de PCs a Medida.png",
     href: "https://custom-core.vercel.app/",
   },
   {
     title: "Landing Page Gym Premium",
     category: "Muscle Factory",
     description: "Landing page de alto impacto para un gimnasio de pesas. Diseño brutalista, tema oscuro y animaciones interactivas.",
-    gradient: "from-zinc-900 to-[#D4FF00]",
+    image: "/portafolio/covers/Landing Page Gym Premium.png",
     href: "/portafolio/Muscle Factory/index.html",
   },
   {
     title: "Restaurante de Alitas",
     category: "Alitas & Bar",
     description: "Menú digital y pedidos para un restaurante casual de alitas y cervezas.",
-    gradient: "from-red-600 to-amber-500",
+    image: "/portafolio/covers/Restaurante de Alitas.png",
     href: "/portafolio/Alitas/index.html",
   },
   {
     title: "Sistema de Reservas",
     category: "Barbería Urbana Neza",
     description: "Portal de reservas tipo app para una barbería, con selección de barbero y horario.",
-    gradient: "from-gray-800 to-yellow-600",
+    image: "/portafolio/covers/Sistema de Reservas Barbería.png",
     href: "/portafolio/Barbería Urbana Neza/index.html",
   },
   {
     title: "Catálogo de Boutique",
     category: "Brisa Marina",
     description: "Landing con catálogo de producto para una boutique de ropa inspirada en la costa.",
-    gradient: "from-cyan-700 to-teal-400",
+    image: "/portafolio/covers/Catálogo de Boutique.png",
     href: "/portafolio/Brisa marina/index.html",
   },
   {
     title: "Servicios Profesionales",
     category: "ElectroSeguro Neza",
     description: "Página de confianza para un electricista local, con llamado directo a contacto.",
-    gradient: "from-blue-900 to-yellow-400",
+    image: "/portafolio/covers/Electroseguro neza.png",
     href: "/portafolio/Electroseguro claude/index.html",
   },
   {
     title: "Landing Page de Evento",
     category: "Taller Marketing Neza",
     description: "Página de registro con contador regresivo para un taller de marketing local.",
-    gradient: "from-violet-800 to-orange-500",
+    image: "/portafolio/covers/Taller marketing neza.png",
     href: "/portafolio/Taller de marketing emprendedores neza/index.html",
   },
 ];
@@ -91,10 +92,17 @@ export default function Portfolio() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-shl-background border border-white/10 rounded-2xl overflow-hidden group hover:border-white/20 transition-all hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex flex-col"
             >
-              <div className={`h-48 w-full bg-gradient-to-br ${project.gradient} relative overflow-hidden flex items-end p-6 shrink-0`}>
-                {/* Overlay gradient to match dark theme */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                <span className="relative z-10 text-white font-bold text-xl drop-shadow-md">
+              <div className="h-48 w-full relative overflow-hidden flex items-end p-6 shrink-0">
+                <Image 
+                  src={project.image} 
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Overlay gradient to make text readable and blend with dark theme */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
+                <span className="relative z-10 text-white font-bold text-xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                   {project.category}
                 </span>
               </div>
