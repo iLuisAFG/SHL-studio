@@ -6,6 +6,13 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "Armado de PCs a Medida",
+    category: "Custom Core",
+    description: "Landing page interactiva para cotizar y diseñar computadoras personalizadas ajustadas al presupuesto del cliente.",
+    gradient: "from-teal-600 to-orange-500",
+    href: "https://custom-core.vercel.app/",
+  },
+  {
     title: "Landing Page Gym Premium",
     category: "Muscle Factory",
     description: "Landing page de alto impacto para un gimnasio de pesas. Diseño brutalista, tema oscuro y animaciones interactivas.",
