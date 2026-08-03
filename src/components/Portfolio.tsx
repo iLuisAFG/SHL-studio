@@ -6,6 +6,13 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "Landing Page Gym Premium",
+    category: "Muscle Factory",
+    description: "Landing page de alto impacto para un gimnasio de pesas. Diseño brutalista, tema oscuro y animaciones interactivas.",
+    gradient: "from-zinc-900 to-[#D4FF00]",
+    href: "/portafolio/Muscle Factory/index.html",
+  },
+  {
     title: "Restaurante de Alitas",
     category: "Alitas & Bar",
     description: "Menú digital y pedidos para un restaurante casual de alitas y cervezas.",
