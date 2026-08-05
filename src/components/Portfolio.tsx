@@ -35,13 +35,6 @@ const projects = [
     href: "/portafolio/Barbería Urbana Neza/index.html",
   },
   {
-    title: "Catálogo de Boutique",
-    category: "Brisa Marina",
-    description: "Landing con catálogo de producto para una boutique de ropa inspirada en la costa.",
-    image: "/portafolio/covers/Catálogo de Boutique.png",
-    href: "/portafolio/Brisa marina/index.html",
-  },
-  {
     title: "Servicios Profesionales",
     category: "ElectroSeguro Neza",
     description: "Página de confianza para un electricista local, con llamado directo a contacto.",
