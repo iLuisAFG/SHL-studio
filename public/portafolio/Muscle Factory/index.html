@@ -354,10 +354,20 @@
             <p class="text-dark/80 font-medium text-lg mb-10 max-w-2xl mx-auto">
                 No pospongas más tu transformación. Únete a Muscle Factory hoy y reclama tu pase de prueba por 3 días totalmente gratis.
             </p>
-            <button class="bg-dark text-accent font-heading font-bold uppercase tracking-wider text-xl px-12 py-5 rounded-sm hover:bg-black transition-all hover:scale-105 shadow-2xl">
-                Reclamar Pase Gratis <i class="fa-solid fa-arrow-right ml-2"></i>
-            </button>
-            <p class="text-dark/60 text-xs mt-4 font-medium uppercase tracking-widest">* Cupos limitados este mes</p>
+            <form class="max-w-md mx-auto flex flex-col gap-4 text-left mb-6" onsubmit="event.preventDefault(); alert('¡Datos enviados con éxito! Te contactaremos pronto.');">
+                <div class="flex flex-col gap-1">
+                    <label for="nombre" class="text-dark font-bold font-heading uppercase text-sm tracking-wide">Nombre Completo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" class="w-full bg-white/40 text-dark placeholder-dark/50 px-4 py-3 rounded-sm border-2 border-dark focus:outline-none focus:bg-white transition-all font-medium" required>
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label for="contacto" class="text-dark font-bold font-heading uppercase text-sm tracking-wide">Teléfono (WhatsApp)</label>
+                    <input type="tel" id="contacto" placeholder="Ej. 55 1234 5678" class="w-full bg-white/40 text-dark placeholder-dark/50 px-4 py-3 rounded-sm border-2 border-dark focus:outline-none focus:bg-white transition-all font-medium" required>
+                </div>
+                <button type="submit" class="bg-dark text-accent font-heading font-bold uppercase tracking-wider text-xl px-8 py-4 mt-2 rounded-sm hover:bg-black transition-all hover:scale-[1.02] shadow-2xl flex justify-center items-center gap-2 w-full">
+                    Obtener Pase Gratis <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+            <p class="text-dark/60 text-xs font-medium uppercase tracking-widest">* Cupos limitados este mes</p>
         </div>
     </section>
 
