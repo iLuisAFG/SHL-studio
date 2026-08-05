@@ -7,6 +7,13 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "Sitio Web Kraken Sport Gym",
+    category: "Kraken Sport Gym",
+    description: "Plataforma web completa para gimnasio de alto rendimiento. Incluye membresías, entrenadores y sistema de citas.",
+    image: "/portafolio/Kraken Sport Gym/Logo Kraken Sport Gym.png",
+    href: "/portafolio/Kraken Sport Gym/index.html",
+  },
+  {
     title: "Armado de PCs a Medida",
     category: "Custom Core",
     description: "Landing page interactiva para cotizar y diseñar computadoras personalizadas ajustadas al presupuesto del cliente.",
