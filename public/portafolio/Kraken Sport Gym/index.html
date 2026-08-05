@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraken Sport Gym | Libera a la bestia</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kraken: '#00BCC8',
+                        krakenHover: '#0097a1',
+                        dark: '#0f1115',
+                        darker: '#08090a',
+                        card: '#161920',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-kraken selection:text-white">
+
+    <!-- Header / Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <img src="Logo%20Kraken%20Sport%20Gym.png" alt="Kraken Sport Gym Logo" class="h-14 w-auto object-contain">
+            </a>
+            
+            <div class="hidden lg:flex gap-8 items-center font-semibold text-sm tracking-wide uppercase">
+                <a href="#nosotros" class="text-white hover:text-kraken transition-colors">Nosotros</a>
+                <a href="#servicios" class="text-white hover:text-kraken transition-colors">Servicios</a>
+                <a href="#paquetes" class="text-white hover:text-kraken transition-colors">Paquetes</a>
+                <a href="#equipo" class="text-white hover:text-kraken transition-colors">Equipo</a>
+                <a href="#ubicacion" class="text-white hover:text-kraken transition-colors">Ubicación</a>
+            </div>
+
+            <a href="#agendar" class="hidden lg:inline-flex items-center justify-center bg-kraken text-white font-bold uppercase tracking-wider px-6 py-2.5 rounded-sm hover:bg-krakenHover transition-all shadow-[0_0_15px_rgba(0,188,200,0.4)] hover:shadow-[0_0_25px_rgba(0,188,200,0.6)]">
+                Agendar Cita
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-white text-3xl hover:text-kraken transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-fixed transform scale-105"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-darker/90 via-darker/70 to-dark"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center reveal">
+            <h1 class="font-heading text-5xl md:text-8xl font-bold uppercase tracking-tighter text-white mb-6 leading-[1.1]">
+                Despierta a <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-kraken to-blue-400">la Bestia</span>
+            </h1>
+            <p class="text-gray-200 text-lg md:text-2xl max-w-2xl mx-auto mb-10 font-light">
+                Más que un gimnasio, somos la cueva donde forjas tu disciplina. Instalaciones de primer nivel y ambiente diseñado para ganar.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#paquetes" class="bg-kraken text-white font-bold uppercase tracking-wider px-10 py-4 rounded-sm hover:bg-krakenHover transition-all shadow-[0_0_20px_rgba(0,188,200,0.4)] hover:-translate-y-1">
+                    Ver Membresías
+                </a>
+                <a href="#agendar" class="bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider px-10 py-4 rounded-sm hover:border-kraken hover:text-kraken transition-all hover:-translate-y-1">
+                    Prueba una Clase
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Down indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-kraken text-2xl">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16 reveal">
+            <div class="w-full md:w-1/2">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase mb-4">¿Quiénes <span class="text-kraken">Somos?</span></h2>
+                <div class="w-20 h-1 bg-kraken mb-8"></div>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                    En <strong>Kraken Sport Gym</strong> no creemos en los atajos. Creemos en el sudor, en la perseverancia y en romper barreras mentales. Nacimos con la filosofía de ofrecer un espacio de alto rendimiento accesible para todos.
+                </p>
+                <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                    Contamos con equipo biomecánico de élite, pesos libres olímpicos y un ambiente de hermandad donde todos buscan su mejor versión.
+                </p>
+                <ul class="flex flex-col gap-4">
+                    <li class="flex items-center gap-4 text-white font-semibold">
+                        <i class="fa-solid fa-check text-kraken text-xl"></i> Ambiente 100% motivacional
+                    </li>
+                    <li class="flex items-center gap-4 text-white font-semibold">
+                        <i class="fa-solid fa-check text-kraken text-xl"></i> Equipo importado de última generación
+                    </li>
+                    <li class="flex items-center gap-4 text-white font-semibold">
+                        <i class="fa-solid fa-check text-kraken text-xl"></i> Atención personalizada real
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute inset-0 bg-kraken blur-[100px] opacity-20 rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" alt="Gym interior" class="rounded-xl border border-gray-800 shadow-2xl relative z-10 w-full object-cover h-[500px]">
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="py-24 bg-darker">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase mb-4">Nuestros <span class="text-kraken">Servicios</span></h2>
+                <div class="w-20 h-1 bg-kraken mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="card-servicio bg-card p-10 rounded-xl border border-gray-800 hover:border-kraken transition-all duration-300 text-center reveal group">
+                    <div class="w-20 h-20 bg-darker rounded-full flex items-center justify-center mx-auto mb-6 text-kraken text-3xl group-hover:bg-kraken group-hover:text-white transition-colors duration-300 shadow-[0_0_15px_rgba(0,188,200,0.2)]">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl text-white font-bold uppercase mb-4">Área de Pesas</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Mancuernas hasta 60kg, racks de sentadilla profesionales, poleas duales y máquinas convergentes.
+                    </p>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="card-servicio bg-card p-10 rounded-xl border border-gray-800 hover:border-kraken transition-all duration-300 text-center reveal group" style="transition-delay: 100ms;">
+                    <div class="w-20 h-20 bg-darker rounded-full flex items-center justify-center mx-auto mb-6 text-kraken text-3xl group-hover:bg-kraken group-hover:text-white transition-colors duration-300 shadow-[0_0_15px_rgba(0,188,200,0.2)]">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl text-white font-bold uppercase mb-4">Zona Cardio</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Caminadoras, elípticas, escaladoras y bicicletas de spinning de última generación para quemar calorías.
+                    </p>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="card-servicio bg-card p-10 rounded-xl border border-gray-800 hover:border-kraken transition-all duration-300 text-center reveal group" style="transition-delay: 200ms;">
+                    <div class="w-20 h-20 bg-darker rounded-full flex items-center justify-center mx-auto mb-6 text-kraken text-3xl group-hover:bg-kraken group-hover:text-white transition-colors duration-300 shadow-[0_0_15px_rgba(0,188,200,0.2)]">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl text-white font-bold uppercase mb-4">Clases Grupales</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Yoga, Zumba, Funcional y Boxeo. Entrena en grupo y mantén la motivación al máximo con instructores expertos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paquetes (Pricing) -->
+    <section id="paquetes" class="py-24 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase mb-4">Membresías <span class="text-kraken">Kraken</span></h2>
+                <div class="w-20 h-1 bg-kraken mx-auto"></div>
+                <p class="text-gray-400 mt-4">Sin letras chiquitas. Paga por lo que usas y obtén resultados.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <!-- Basico -->
+                <div class="bg-card rounded-xl border border-gray-800 p-8 reveal">
+                    <h3 class="text-xl font-bold text-gray-300 uppercase tracking-widest mb-2">Básico</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-4xl font-heading font-bold text-white">$450</span>
+                        <span class="text-gray-500 text-sm">/ mes</span>
+                    </div>
+                    <ul class="flex flex-col gap-4 mb-8">
+                        <li class="flex gap-3 text-gray-400 text-sm"><i class="fa-solid fa-check text-kraken mt-1"></i> Acceso a sala de pesas y cardio</li>
+                        <li class="flex gap-3 text-gray-400 text-sm"><i class="fa-solid fa-check text-kraken mt-1"></i> Vestidores y regaderas</li>
+                        <li class="flex gap-3 text-gray-600 text-sm"><i class="fa-solid fa-xmark mt-1"></i> Sin acceso a clases grupales</li>
+                        <li class="flex gap-3 text-gray-600 text-sm"><i class="fa-solid fa-xmark mt-1"></i> Asesoría general</li>
+                    </ul>
+                    <a href="#agendar" class="block text-center w-full bg-darker border border-gray-700 text-white font-bold py-3 rounded hover:border-kraken hover:text-kraken transition-colors">Seleccionar</a>
+                </div>
+
+                <!-- Pro (Destacado) -->
+                <div class="bg-gradient-to-b from-card to-darker rounded-xl border-2 border-kraken p-10 transform md:-translate-y-4 shadow-[0_0_30px_rgba(0,188,200,0.15)] relative reveal" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-kraken text-white font-bold uppercase text-xs px-4 py-1 rounded-full">
+                        Más Popular
+                    </div>
+                    <h3 class="text-xl font-bold text-kraken uppercase tracking-widest mb-2">Kraken Pro</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-5xl font-heading font-bold text-white">$650</span>
+                        <span class="text-gray-500 text-sm">/ mes</span>
+                    </div>
+                    <ul class="flex flex-col gap-4 mb-8">
+                        <li class="flex gap-3 text-gray-200 text-sm font-medium"><i class="fa-solid fa-check text-kraken mt-1"></i> Acceso Total a Instalaciones</li>
+                        <li class="flex gap-3 text-gray-200 text-sm font-medium"><i class="fa-solid fa-check text-kraken mt-1"></i> Todas las clases grupales incluidas</li>
+                        <li class="flex gap-3 text-gray-200 text-sm font-medium"><i class="fa-solid fa-check text-kraken mt-1"></i> Evaluación mensual y rutina</li>
+                        <li class="flex gap-3 text-gray-200 text-sm font-medium"><i class="fa-solid fa-check text-kraken mt-1"></i> Descuento en suplementos</li>
+                    </ul>
+                    <a href="#agendar" class="block text-center w-full bg-kraken text-white font-bold py-3 rounded hover:bg-krakenHover transition-colors shadow-lg">Unirse Ahora</a>
+                </div>
+
+                <!-- Anual -->
+                <div class="bg-card rounded-xl border border-gray-800 p-8 reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold text-gray-300 uppercase tracking-widest mb-2">Anual VIP</h3>
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-4xl font-heading font-bold text-white">$6,000</span>
+                        <span class="text-gray-500 text-sm">/ año</span>
+                    </div>
+                    <ul class="flex flex-col gap-4 mb-8">
+                        <li class="flex gap-3 text-gray-400 text-sm"><i class="fa-solid fa-check text-kraken mt-1"></i> Ahorras más de $1,800 MXN</li>
+                        <li class="flex gap-3 text-gray-400 text-sm"><i class="fa-solid fa-check text-kraken mt-1"></i> Beneficios del paquete Kraken Pro</li>
+                        <li class="flex gap-3 text-gray-400 text-sm"><i class="fa-solid fa-check text-kraken mt-1"></i> Toalla y locker gratis</li>
+                        <li class="flex gap-3 text-gray-400 text-sm"><i class="fa-solid fa-check text-kraken mt-1"></i> Invitado gratis 2 veces al mes</li>
+                    </ul>
+                    <a href="#agendar" class="block text-center w-full bg-darker border border-gray-700 text-white font-bold py-3 rounded hover:border-kraken hover:text-kraken transition-colors">Seleccionar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestro Equipo (Entrenadores) -->
+    <section id="equipo" class="py-24 bg-darker">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase mb-4">Nuestro <span class="text-kraken">Equipo</span></h2>
+                <div class="w-20 h-1 bg-kraken mx-auto"></div>
+                <p class="text-gray-400 mt-4">Profesionales certificados listos para llevarte al siguiente nivel.</p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+                <!-- We will generate cards for the 11 images dynamically or manually -->
+                <!-- Entrenador 1 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Ander%20Antequera.jpg" alt="Ander Antequera" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Ander Antequera</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Head Coach</p>
+                    </div>
+                </div>
+                <!-- Entrenador 2 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Camila%20Vega.jpg" alt="Camila Vega" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Camila Vega</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Funcional</p>
+                    </div>
+                </div>
+                <!-- Entrenador 3 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Camila%20alamilla.jpg" alt="Camila Alamilla" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Camila Alamilla</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Yoga / Pilates</p>
+                    </div>
+                </div>
+                <!-- Entrenador 4 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Eduardo%20Ayala.jpg" alt="Eduardo Ayala" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Eduardo Ayala</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Fuerza / Hipertrofia</p>
+                    </div>
+                </div>
+                <!-- Entrenador 5 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Javier%20Ballesteros.jpg" alt="Javier Ballesteros" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Javier Ballesteros</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Cross-Training</p>
+                    </div>
+                </div>
+                <!-- Entrenador 6 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Jos%C3%A9%20Morales.jpg" alt="José Morales" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">José Morales</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Boxeo</p>
+                    </div>
+                </div>
+                <!-- Entrenador 7 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Katherine%20Mendez.jpg" alt="Katherine Mendez" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Katherine Mendez</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Zumba / Cardio</p>
+                    </div>
+                </div>
+                <!-- Entrenador 8 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Marisol%20Gaspar.jpg" alt="Marisol Gaspar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Marisol Gaspar</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Fuerza</p>
+                    </div>
+                </div>
+                <!-- Entrenador 9 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Miguel%20Hernandez.jpg" alt="Miguel Hernandez" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Miguel Hernandez</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Fisioterapia</p>
+                    </div>
+                </div>
+                <!-- Entrenador 10 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Sarahi%20Delgado.jpg" alt="Sarahi Delgado" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Sarahi Delgado</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Personal Trainer</p>
+                    </div>
+                </div>
+                <!-- Entrenador 11 -->
+                <div class="group relative rounded-lg overflow-hidden aspect-[3/4] reveal">
+                    <img src="Personal/Sebastian%20Flores.jpg" alt="Sebastian Flores" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                        <h4 class="text-white font-bold font-heading uppercase text-lg">Sebastian Flores</h4>
+                        <p class="text-kraken text-xs font-semibold uppercase">Preparador Físico</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendar Citas Form -->
+    <section id="agendar" class="py-24 bg-dark relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-card p-10 md:p-14 rounded-2xl border border-gray-800 shadow-2xl relative overflow-hidden reveal">
+                <!-- Decoración -->
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-kraken/10 rounded-full blur-[80px]"></div>
+                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-kraken/10 rounded-full blur-[80px]"></div>
+                
+                <div class="relative z-10 text-center mb-10">
+                    <h2 class="font-heading text-3xl md:text-5xl font-bold text-white uppercase mb-4">Agenda tu <span class="text-kraken">Cita</span></h2>
+                    <p class="text-gray-400">Déjanos tus datos para agendar una clase muestra o inscribirte.</p>
+                </div>
+
+                <form id="citaForm" class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="nombre" class="text-white text-sm font-semibold uppercase tracking-wider">Nombre Completo</label>
+                        <input type="text" id="nombre" required class="bg-darker border border-gray-700 text-white px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="telefono" class="text-white text-sm font-semibold uppercase tracking-wider">Teléfono / WhatsApp</label>
+                        <input type="tel" id="telefono" required class="bg-darker border border-gray-700 text-white px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors">
+                    </div>
+                    <div class="flex flex-col gap-2 md:col-span-2">
+                        <label for="interes" class="text-white text-sm font-semibold uppercase tracking-wider">¿En qué estás interesado?</label>
+                        <select id="interes" class="bg-darker border border-gray-700 text-gray-300 px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors appearance-none cursor-pointer">
+                            <option value="membresia">Información de Membresías</option>
+                            <option value="clase">Agendar Clase Muestra</option>
+                            <option value="personal">Entrenamiento Personalizado</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 mt-4">
+                        <button type="submit" class="w-full bg-kraken text-white font-bold uppercase tracking-wider py-4 rounded hover:bg-krakenHover transition-all shadow-[0_0_15px_rgba(0,188,200,0.3)] hover:shadow-[0_0_25px_rgba(0,188,200,0.6)]">
+                            Solicitar Cita <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sucursales, Ubicación y Horarios -->
+    <section id="ubicacion" class="py-24 bg-darker border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center reveal">
+                <!-- Info -->
+                <div class="w-full lg:w-1/3">
+                    <h2 class="font-heading text-4xl font-bold text-white uppercase mb-4">Dónde <span class="text-kraken">Encontrarnos</span></h2>
+                    <div class="w-20 h-1 bg-kraken mb-8"></div>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-heading text-xl font-bold text-white uppercase mb-2 flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-kraken"></i> Sucursal Principal
+                        </h4>
+                        <p class="text-gray-400 leading-relaxed ml-7">
+                            Av. de los Insurgentes Sur 1000,<br> 
+                            Col. del Valle, Ciudad de México,<br> 
+                            CDMX 03100
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-heading text-xl font-bold text-white uppercase mb-2 flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-kraken"></i> Horarios de Atención
+                        </h4>
+                        <ul class="text-gray-400 ml-7 flex flex-col gap-1">
+                            <li class="flex justify-between border-b border-gray-800 pb-1"><span>Lunes - Viernes:</span> <span class="text-white">5:00 am - 11:00 pm</span></li>
+                            <li class="flex justify-between border-b border-gray-800 py-1"><span>Sábados:</span> <span class="text-white">6:00 am - 6:00 pm</span></li>
+                            <li class="flex justify-between pt-1"><span>Domingos:</span> <span class="text-white">7:00 am - 2:00 pm</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="w-full lg:w-2/3 h-[400px] rounded-xl overflow-hidden border border-gray-800 relative shadow-[0_0_20px_rgba(0,188,200,0.1)] group">
+                    <div class="absolute inset-0 border-2 border-transparent group-hover:border-kraken transition-colors duration-500 pointer-events-none z-10 rounded-xl"></div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.4545568551465!2d-99.17647902409747!3d19.392329381881775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff73801fec43%3A0x6e25c8311abaf44b!2sAv.%20de%20los%20Insurgentes%20Sur%201000%2C%20Col%20del%20Valle%20Centro%2C%20Benito%20Ju%C3%A1rez%2C%2003100%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker pt-16 pb-8 border-t border-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <a href="#" class="flex items-center gap-3">
+                    <img src="Logo%20Kraken%20Sport%20Gym.png" alt="Kraken Sport Gym Logo" class="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all">
+                </a>
+                
+                <div class="flex gap-6 text-2xl">
+                    <a href="https://www.instagram.com/krakensportgym/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-kraken transition-colors hover:scale-110 transform duration-200"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/krakensportgym/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-kraken transition-colors hover:scale-110 transform duration-200"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@kraken.sport.gym" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-kraken transition-colors hover:scale-110 transform duration-200"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-gray-600 uppercase tracking-widest">
+                <p>&copy; 2026 Kraken Sport Gym. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-kraken transition-colors">Privacidad</a>
+                    <a href="#" class="hover:text-kraken transition-colors">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/5215582095618" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform duration-300 z-50 animate-bounce hover:animate-none">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
