@@ -56,4 +56,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
+
+    // 4. Image Lightbox for Services
+    const serviceImages = document.querySelectorAll('#servicios img');
+    const lightboxModal = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    if (serviceImages.length > 0 && lightboxModal && lightboxImg) {
+        serviceImages.forEach(img => {
+            img.closest('.group').addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxModal.classList.remove('hidden');
+                lightboxModal.classList.add('flex');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            });
+        });
+
+        const closeModal = () => {
+            lightboxModal.classList.add('hidden');
+            lightboxModal.classList.remove('flex');
+            lightboxImg.src = '';
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        closeLightbox.addEventListener('click', closeModal);
+        lightboxModal.addEventListener('click', (e) => {
+            // Close if clicked outside the image
+            if (e.target === lightboxModal) {
+                closeModal();
+            }
+        });
+        
+        // Add Esc key listener to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    }
 });
