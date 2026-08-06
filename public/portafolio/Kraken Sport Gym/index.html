@@ -385,25 +385,39 @@
                 </div>
 
                 <form id="citaForm" class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2 md:col-span-2">
                         <label for="nombre" class="text-white text-sm font-semibold uppercase tracking-wider">Nombre Completo</label>
                         <input type="text" id="nombre" required class="bg-darker border border-gray-700 text-white px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors">
                     </div>
                     <div class="flex flex-col gap-2">
-                        <label for="telefono" class="text-white text-sm font-semibold uppercase tracking-wider">Teléfono / WhatsApp</label>
-                        <input type="tel" id="telefono" required class="bg-darker border border-gray-700 text-white px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors">
+                        <label for="edad" class="text-white text-sm font-semibold uppercase tracking-wider">Edad</label>
+                        <input type="number" id="edad" min="12" max="99" required class="bg-darker border border-gray-700 text-white px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors">
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label for="genero" class="text-white text-sm font-semibold uppercase tracking-wider">Género</label>
+                        <select id="genero" required class="bg-darker border border-gray-700 text-gray-300 px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors appearance-none cursor-pointer">
+                            <option value="" disabled selected>Selecciona tu género</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
                     </div>
                     <div class="flex flex-col gap-2 md:col-span-2">
-                        <label for="interes" class="text-white text-sm font-semibold uppercase tracking-wider">¿En qué estás interesado?</label>
-                        <select id="interes" class="bg-darker border border-gray-700 text-gray-300 px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors appearance-none cursor-pointer">
-                            <option value="membresia">Información de Membresías</option>
-                            <option value="clase">Agendar Clase Muestra</option>
-                            <option value="personal">Entrenamiento Personalizado</option>
+                        <label for="interes" class="text-white text-sm font-semibold uppercase tracking-wider">Servicio Interesado</label>
+                        <select id="interes" required class="bg-darker border border-gray-700 text-gray-300 px-4 py-3 rounded focus:outline-none focus:border-kraken transition-colors appearance-none cursor-pointer">
+                            <option value="" disabled selected>Selecciona un servicio</option>
+                            <option value="Membresía Básica">Membresía Básica</option>
+                            <option value="Membresía Pro">Membresía Pro</option>
+                            <option value="Membresía Anual VIP">Membresía Anual VIP</option>
+                            <option value="Clases de Box para niños">Clases de Box para niños</option>
+                            <option value="Consultas de Nutriología">Consultas de Nutriología</option>
+                            <option value="Electroestimulación">Electroestimulación</option>
+                            <option value="Limpieza Facial o Dermocosmética">Limpieza Facial o Dermocosmética</option>
                         </select>
                     </div>
                     <div class="md:col-span-2 mt-4">
-                        <button type="submit" class="w-full bg-kraken text-white font-bold uppercase tracking-wider py-4 rounded hover:bg-krakenHover transition-all shadow-[0_0_15px_rgba(0,188,200,0.3)] hover:shadow-[0_0_25px_rgba(0,188,200,0.6)]">
-                            Solicitar Cita <i class="fa-solid fa-paper-plane ml-2"></i>
+                        <button type="submit" class="w-full bg-[#25D366] text-white font-bold uppercase tracking-wider py-4 rounded hover:bg-[#1EBE5D] transition-all shadow-[0_0_15px_rgba(37,211,102,0.3)] hover:shadow-[0_0_25px_rgba(37,211,102,0.6)] flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i> Agendar por WhatsApp
                         </button>
                     </div>
                 </form>

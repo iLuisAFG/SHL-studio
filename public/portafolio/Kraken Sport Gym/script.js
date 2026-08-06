@@ -37,23 +37,27 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
-    // 3. Form Submission Handle
+    // 3. Form Submission Handle (WhatsApp Redirect)
     const citaForm = document.getElementById('citaForm');
     if(citaForm) {
         citaForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Simulate form submission
-            const btn = citaForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin ml-2"></i>';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                alert('¡Solicitud enviada con éxito! Nuestro equipo se pondrá en contacto contigo pronto.');
-                citaForm.reset();
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-            }, 1500);
+            
+            // Gather form data
+            const nombre = document.getElementById('nombre').value;
+            const edad = document.getElementById('edad').value;
+            const genero = document.getElementById('genero').value;
+            const interes = document.getElementById('interes').value;
+            
+            // Construct WhatsApp message
+            const mensaje = `¡Hola, Kraken Sport Gym! Me gustaría pedir informes o agendar una cita.\n\nMis datos son:\n- Nombre: ${nombre}\n- Edad: ${edad} años\n- Género: ${genero}\n\nMe interesa: ${interes}`;
+            
+            // Redirect to WhatsApp
+            const whatsappNumber = '5215582095618';
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
+            
+            window.open(whatsappUrl, '_blank');
+            citaForm.reset();
         });
     }
 
