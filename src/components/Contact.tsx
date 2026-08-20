@@ -5,36 +5,19 @@ import { motion } from "framer-motion";
 import { Send, Globe, Mail, MessageSquare, Phone } from "lucide-react";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({ name: "", business: "", email: "", message: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
 
-    try {
-      const response = await fetch("https://formspree.io/f/xbdnzkoo", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitStatus("idle"), 5000);
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const { name, business, email, message } = formData;
+    
+    const whatsappNumber = '5529156160';
+    const text = `¡Hola SHL Studio! Me gustaría iniciar un proyecto.\n\nMis datos:\n- Nombre: ${name}\n- Negocio: ${business}\n- Correo: ${email}\n\nMensaje:\n${message}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    setFormData({ name: "", business: "", email: "", message: "" });
   };
 
   return (
@@ -109,6 +92,20 @@ export default function Contact() {
                   className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white placeholder-shl-secondary/50 focus:outline-none focus:border-shl-accent focus:ring-1 focus:ring-shl-accent transition-all"
                 />
               </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="business" className="text-sm text-shl-secondary font-medium ml-1">Nombre de tu Negocio</label>
+                <input 
+                  type="text" 
+                  id="business"
+                  name="business"
+                  required
+                  value={formData.business}
+                  onChange={(e) => setFormData(prev => ({ ...prev, business: e.target.value }))}
+                  placeholder="Ej. Mi Empresa S.A."
+                  className="bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white placeholder-shl-secondary/50 focus:outline-none focus:border-shl-accent focus:ring-1 focus:ring-shl-accent transition-all"
+                />
+              </div>
               
               <div className="flex flex-col gap-2">
                 <label htmlFor="email" className="text-sm text-shl-secondary font-medium ml-1">Correo Electrónico</label>
@@ -141,19 +138,11 @@ export default function Contact() {
               <div className="flex flex-col gap-2">
                 <button 
                   type="submit"
-                  disabled={isSubmitting}
-                  className={`group flex items-center justify-center gap-2 w-full mt-2 bg-shl-accent text-white rounded-xl py-4 font-semibold hover:bg-shl-accent-hover transition-colors neon-shadow ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  className="group flex items-center justify-center gap-2 w-full mt-2 bg-shl-accent text-white rounded-xl py-4 font-semibold hover:bg-shl-accent-hover transition-colors neon-shadow"
                 >
-                  {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
-                  {!isSubmitting && <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                  Enviar Mensaje
+                  <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
-                
-                {submitStatus === "success" && (
-                  <p className="text-green-400 text-sm text-center mt-1 font-medium">¡Mensaje enviado con éxito! Te contactaremos pronto.</p>
-                )}
-                {submitStatus === "error" && (
-                  <p className="text-red-400 text-sm text-center mt-1 font-medium">Hubo un error al enviar el mensaje. Intenta de nuevo.</p>
-                )}
               </div>
             </form>
           </motion.div>
