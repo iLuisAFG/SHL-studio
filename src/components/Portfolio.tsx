@@ -14,6 +14,13 @@ const projects = [
     href: "/portafolio/Kraken Sport Gym/index.html",
   },
   {
+    title: "Landing Page Cafetería",
+    category: "Löyly Finnish Coffee",
+    description: "Página web minimalista y elegante estilo nórdico para la primera cafetería de inspiración finlandesa.",
+    image: "/portafolio/covers/Loyly Finnish Coffee.png",
+    href: "/portafolio/Loyly Finnish Coffee/index.html",
+  },
+  {
     title: "Armado de PCs a Medida",
     category: "Custom Core",
     description: "Landing page interactiva para cotizar y diseñar computadoras personalizadas ajustadas al presupuesto del cliente.",
