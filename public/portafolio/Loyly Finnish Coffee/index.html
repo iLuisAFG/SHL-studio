@@ -71,7 +71,7 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800" alt="Café sirviéndose" class="rounded-2xl shadow-2xl object-cover h-[400px] md:h-[500px] w-full">
+                    <img src="Imágenes para añadir antigravity/Cafe con humo.png" alt="Café sirviéndose" class="rounded-2xl shadow-2xl object-cover h-[400px] md:h-[500px] w-full">
                     <div class="absolute -bottom-8 -right-8 bg-loyly-green text-loyly-light p-8 rounded-2xl hidden md:block max-w-xs shadow-xl border border-loyly-light/10">
                         <i class="fa-solid fa-quote-left text-loyly-wood text-3xl mb-4"></i>
                         <p class="italic text-sm leading-relaxed">"Löyly es el vapor que abraza cuando el agua toca las piedras calientes."</p>
@@ -103,13 +103,54 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-[#EAE5DE]">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-3xl md:text-5xl font-bold mb-6 text-loyly-green">Nuestros Espacios</h3>
+            <div class="w-16 h-1 bg-loyly-wood mb-16 rounded-full mx-auto"></div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="group relative rounded-xl overflow-hidden cursor-pointer aspect-square" onclick="openLightbox('Imágenes para añadir antigravity/1.jpg')">
+                    <img src="Imágenes para añadir antigravity/1.jpg" alt="Espacio Löyly 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-loyly-green/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden cursor-pointer aspect-square" onclick="openLightbox('Imágenes para añadir antigravity/2.jpg')">
+                    <img src="Imágenes para añadir antigravity/2.jpg" alt="Espacio Löyly 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-loyly-green/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden cursor-pointer aspect-square" onclick="openLightbox('Imágenes para añadir antigravity/3.jpg')">
+                    <img src="Imágenes para añadir antigravity/3.jpg" alt="Espacio Löyly 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-loyly-green/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden cursor-pointer aspect-square" onclick="openLightbox('Imágenes para añadir antigravity/4.jpg')">
+                    <img src="Imágenes para añadir antigravity/4.jpg" alt="Espacio Löyly 4" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-loyly-green/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden cursor-pointer aspect-square col-span-2 md:col-span-1" onclick="openLightbox('Imágenes para añadir antigravity/5.jpg')">
+                    <img src="Imágenes para añadir antigravity/5.jpg" alt="Espacio Löyly 5" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-loyly-green/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                        <i class="fa-solid fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Info Section -->
     <section id="contacto" class="py-24 bg-loyly-green text-loyly-light relative overflow-hidden">
         <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
-        <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
             <h3 class="text-3xl md:text-5xl font-bold mb-16">Planea tu visita</h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <!-- Horarios -->
                 <div class="bg-white/5 border border-white/10 p-10 rounded-3xl backdrop-blur-sm hover:bg-white/10 transition-colors">
                     <div class="w-14 h-14 bg-loyly-wood/20 text-loyly-wood rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
@@ -129,10 +170,15 @@
                         <h4 class="text-2xl font-semibold mb-4">Ubicación</h4>
                         <p class="text-loyly-light/70 mb-6 text-lg leading-relaxed">Av. Chimalhuacán 104, Benito Juárez, 57000 Cdad. Nezahualcóyotl, Méx.</p>
                     </div>
-                    <a href="https://maps.google.com/?q=Av.+Chimalhuacán+104,+Benito+Juárez,+57000+Cdad.+Nezahualcóyotl,+Méx." target="_blank" class="inline-block text-loyly-wood font-semibold hover:text-white transition-colors group">
-                        Ver en el mapa <i class="fa-solid fa-arrow-right ml-1 text-sm transform group-hover:translate-x-1 transition-transform"></i>
+                    <a href="https://maps.app.goo.gl/9zT7z4N4rN3Z2QxW6" target="_blank" class="inline-block text-loyly-wood font-semibold hover:text-white transition-colors group">
+                        Abrir en Google Maps <i class="fa-solid fa-arrow-right ml-1 text-sm transform group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
+            </div>
+            
+            <!-- Mapa Interactivo -->
+            <div class="w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-white/5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.090123992147!2d-99.0195574!3d19.4084534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e2e3428d05db%3A0xc665181b5c21ec21!2sAv.%20Chimalhuac%C3%A1n%20104%2C%20Benito%20Ju%C3%A1rez%2C%2057000%20Nezahualc%C3%B3yotl%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1714589234983!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
     </section>
@@ -158,5 +204,41 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center backdrop-blur-sm transition-opacity opacity-0" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white text-5xl transition-colors" onclick="closeLightbox()">&times;</button>
+        <img id="lightboxImg" src="" alt="Imagen grande" class="max-w-[90vw] max-h-[90vh] rounded-lg shadow-2xl object-contain transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            // Timeout for smooth fade-in
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                lightboxImg.src = '';
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+    </script>
 </body>
 </html>
