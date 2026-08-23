@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Globe, Mail, MessageSquare, Phone } from "lucide-react";
+import { Send, Globe, Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", business: "", email: "", message: "" });
@@ -54,9 +54,8 @@ export default function Contact() {
             <div className="flex gap-4">
               {[
                 { icon: Globe, href: "#" },
-                { icon: MessageSquare, href: "#" },
-                { icon: Mail, href: "#" },
-                { icon: Phone, href: "#" }
+                { icon: Mail, href: "mailto:shlwebstudio@gmail.com" },
+                { icon: Phone, href: "tel:5529156160" }
               ].map((social, idx) => {
                 const Icon = social.icon;
                 return (
