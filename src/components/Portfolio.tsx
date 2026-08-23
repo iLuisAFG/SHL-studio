@@ -7,18 +7,18 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "Coffee House Nórdico",
+    category: "Löyly Finnish Coffee",
+    description: "Landing page minimalista para la primera cafetería de inspiración finlandesa en Neza. Diseño cálido y centrado en la experiencia.",
+    image: "/portafolio/covers/Loyly Finnish Coffee.png",
+    href: "/portafolio/Loyly Finnish Coffee/index.html",
+  },
+  {
     title: "Sitio Web Kraken Sport Gym",
     category: "Kraken Sport Gym",
     description: "Plataforma web completa para gimnasio de alto rendimiento. Incluye membresías, entrenadores y sistema de citas.",
     image: "/portafolio/Kraken Sport Gym/Logo Kraken Sport Gym.png",
     href: "/portafolio/Kraken Sport Gym/index.html",
-  },
-  {
-    title: "Landing Page Cafetería",
-    category: "Löyly Finnish Coffee",
-    description: "Página web minimalista y elegante estilo nórdico para la primera cafetería de inspiración finlandesa.",
-    image: "/portafolio/covers/Loyly Finnish Coffee.png",
-    href: "/portafolio/Loyly Finnish Coffee/index.html",
   },
   {
     title: "Armado de PCs a Medida",
