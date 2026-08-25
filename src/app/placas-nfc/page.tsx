@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, MapPin, Globe, MessageCircle, Facebook, Instagram, Video, ShoppingCart } from "lucide-react";
+import { ArrowLeft, MapPin, Globe, MessageCircle, Users, Camera, Video, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -40,7 +40,7 @@ const nfcProducts = [
     name: "Placa NFC Instagram",
     description: "Aumenta tus seguidores orgánicamente. Un toque y tus clientes estarán viendo tu perfil listos para seguirte.",
     price: "$399 MXN",
-    icon: Instagram,
+    icon: Camera,
     imagePlaceholder: "ig-placeholder",
     color: "text-pink-500",
   },
@@ -49,7 +49,7 @@ const nfcProducts = [
     name: "Placa NFC Facebook",
     description: "Gana 'Me gusta' y visibilidad en tu Fanpage local de forma rápida y sencilla en tu mostrador o mesas.",
     price: "$399 MXN",
-    icon: Facebook,
+    icon: Users,
     imagePlaceholder: "fb-placeholder",
     color: "text-blue-600",
   },
@@ -126,7 +126,7 @@ export default function PlacasNFC() {
                     
                     {/* Placeholder content until actual images are provided */}
                     <div className="relative z-20 flex flex-col items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity group-hover:scale-110 duration-500">
-                       <Icon className={\`w-24 h-24 mb-4 \${product.color}\`} />
+                       <Icon className={`w-24 h-24 mb-4 ${product.color}`} />
                        <span className="text-sm font-medium tracking-widest uppercase text-white/50 border border-white/20 px-3 py-1 rounded-full">Espacio para Imagen</span>
                     </div>
                   </div>
