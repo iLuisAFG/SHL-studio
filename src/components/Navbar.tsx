@@ -1,10 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
@@ -23,6 +27,7 @@ export default function Navbar() {
           />
         </Link>
         
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-shl-secondary">
           <Link href="/#servicios" className="hover:text-white transition-colors">Servicios</Link>
           <Link href="/#portafolio" className="hover:text-white transition-colors">Portafolio</Link>
@@ -37,7 +42,43 @@ export default function Navbar() {
         >
           Cotizar Proyecto
         </Link>
+
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden p-2 text-shl-secondary hover:text-white transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-white/5 bg-shl-background/95 backdrop-blur-lg overflow-hidden"
+          >
+            <div className="flex flex-col px-6 py-6 gap-6">
+              <Link href="/#servicios" onClick={() => setIsMobileMenuOpen(false)} className="text-shl-secondary hover:text-white font-medium">Servicios</Link>
+              <Link href="/#portafolio" onClick={() => setIsMobileMenuOpen(false)} className="text-shl-secondary hover:text-white font-medium">Portafolio</Link>
+              <Link href="/placas-nfc" onClick={() => setIsMobileMenuOpen(false)} className="text-shl-accent font-medium">Placas NFC</Link>
+              <Link href="/#nosotros" onClick={() => setIsMobileMenuOpen(false)} className="text-shl-secondary hover:text-white font-medium">Nosotros</Link>
+              <Link href="/#contacto" onClick={() => setIsMobileMenuOpen(false)} className="text-shl-secondary hover:text-white font-medium">Contacto</Link>
+              
+              <Link 
+                href="/cotizar"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex justify-center px-5 py-3 mt-4 rounded-xl bg-shl-accent text-white font-semibold shadow-lg shadow-shl-accent/20"
+              >
+                Cotizar Proyecto
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
