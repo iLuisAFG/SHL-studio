@@ -24,10 +24,11 @@ export default function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-shl-secondary">
-          <Link href="#servicios" className="hover:text-white transition-colors">Servicios</Link>
-          <Link href="#portafolio" className="hover:text-white transition-colors">Portafolio</Link>
-          <Link href="#nosotros" className="hover:text-white transition-colors">Nosotros</Link>
-          <Link href="#contacto" className="hover:text-white transition-colors">Contacto</Link>
+          <Link href="/#servicios" className="hover:text-white transition-colors">Servicios</Link>
+          <Link href="/#portafolio" className="hover:text-white transition-colors">Portafolio</Link>
+          <Link href="/placas-nfc" className="hover:text-white transition-colors">Placas NFC</Link>
+          <Link href="/#nosotros" className="hover:text-white transition-colors">Nosotros</Link>
+          <Link href="/#contacto" className="hover:text-white transition-colors">Contacto</Link>
         </div>
 
         <Link 
