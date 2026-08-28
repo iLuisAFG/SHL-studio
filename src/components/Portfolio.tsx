@@ -10,8 +10,8 @@ const projects = [
     title: "Coffee House Nórdico",
     category: "Löyly Finnish Coffee",
     description: "Landing page minimalista para la primera cafetería de inspiración finlandesa en Neza. Diseño cálido y centrado en la experiencia.",
-    image: "/portafolio/covers/Loyly Finnish Coffee.png",
-    href: "/portafolio/Loyly Finnish Coffee/index.html",
+    image: "/portafolio/Loyly Finnish Coffee/Logo para vista previa de enlace.jpeg",
+    href: "https://löylyfinnishcoffee.com",
   },
   {
     title: "Sitio Web Kraken Sport Gym",
