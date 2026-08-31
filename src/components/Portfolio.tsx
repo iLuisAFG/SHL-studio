@@ -249,8 +249,8 @@ export default function Portfolio() {
               >
                 <div className="relative aspect-video overflow-hidden bg-neutral-900">
                   <Image
-                    src={project.src}
-                    alt={project.alt}
+                    src={project.src || "/logo.jpeg"}
+                    alt={project.alt || project.title || "Proyecto SHL Studio"}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />

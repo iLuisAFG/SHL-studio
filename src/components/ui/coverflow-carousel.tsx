@@ -8,12 +8,14 @@ const useIsoLayoutEffect =
   typeof window !== "undefined" ? React.useLayoutEffect : React.useEffect;
 
 export interface CoverflowSlide {
-  src: string;
-  alt: string;
+  src?: string;
+  alt?: string;
   title?: string;
   subtitle?: string;
   meta?: { label: string; value: string }[];
   href?: string;
+  tag?: string;
+  [key: string]: any;
 }
 
 export interface CoverflowCarouselProps {
@@ -24,6 +26,7 @@ export interface CoverflowCarouselProps {
   falloff?: number;
   fade?: number;
   cardWidth?: string;
+  cardHeight?: string;
   gap?: number;
   loop?: boolean;
   showCaption?: boolean;
@@ -32,6 +35,7 @@ export interface CoverflowCarouselProps {
   label?: string;
   className?: string;
   cardClassName?: string;
+  renderCard?: (slide: CoverflowSlide, index: number, isSelected: boolean) => React.ReactNode;
 }
 
 export function CoverflowCarousel({
@@ -42,6 +46,7 @@ export function CoverflowCarousel({
   falloff = 0.56,
   fade = 0.1,
   cardWidth = "clamp(260px, 28vw, 380px)",
+  cardHeight,
   gap = 0.05,
   loop = true,
   showCaption = true,
@@ -50,6 +55,7 @@ export function CoverflowCarousel({
   label = "Portafolio Coverflow",
   className,
   cardClassName,
+  renderCard,
 }: CoverflowCarouselProps) {
   const count = slides.length;
   const frameRef = React.useRef<HTMLDivElement>(null);
@@ -211,6 +217,7 @@ export function CoverflowCarousel({
   );
 
   const active = slides[selected];
+  const effectiveHeight = cardHeight || (renderCard ? "auto" : "var(--cf-card)");
 
   return (
     <div
@@ -244,9 +251,9 @@ export function CoverflowCarousel({
           }}
         >
           <div
-            className="relative select-none"
+            className="relative select-none flex items-center justify-center"
             style={{
-              height: "var(--cf-card)",
+              height: cardHeight || (renderCard ? "460px" : "var(--cf-card)"),
               transformStyle: "preserve-3d",
             }}
           >
@@ -260,19 +267,29 @@ export function CoverflowCarousel({
                 aria-roledescription="slide"
                 aria-label={`${index + 1} of ${count}`}
                 className={cn(
-                  "absolute left-1/2 top-0 aspect-video md:aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900 border border-white/10 shadow-2xl will-change-transform group cursor-pointer",
+                  renderCard
+                    ? "absolute left-1/2 top-0 will-change-transform cursor-pointer"
+                    : "absolute left-1/2 top-0 aspect-video md:aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-900 border border-white/10 shadow-2xl will-change-transform group cursor-pointer",
                   cardClassName,
                 )}
                 style={{ width: "var(--cf-card)" }}
                 onClick={() => goTo(index)}
               >
-                <img
-                  src={slide.src}
-                  alt={slide.alt}
-                  draggable={false}
-                  className="h-full w-full select-none object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                {renderCard ? (
+                  renderCard(slide, index, index === selected)
+                ) : (
+                  <>
+                    {slide.src && (
+                      <img
+                        src={slide.src}
+                        alt={slide.alt || slide.title || "Slide"}
+                        draggable={false}
+                        className="h-full w-full select-none object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -284,7 +301,7 @@ export function CoverflowCarousel({
               type="button"
               aria-label="Previous slide"
               onClick={() => nudge(-1)}
-              className="absolute left-2 md:left-6 top-1/2 z-[200] -translate-y-1/2 rounded-full bg-black/60 p-3 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/90 border border-white/15 shadow-xl hover:border-cyan-500/50 cursor-pointer"
+              className="absolute left-2 md:left-6 top-1/2 z-[200] -translate-y-1/2 rounded-full bg-black/70 p-3 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/90 border border-white/15 shadow-xl hover:border-cyan-500/50 cursor-pointer"
             >
               <ChevronLeft className="size-5" />
             </button>
@@ -292,7 +309,7 @@ export function CoverflowCarousel({
               type="button"
               aria-label="Next slide"
               onClick={() => nudge(1)}
-              className="absolute right-2 md:right-6 top-1/2 z-[200] -translate-y-1/2 rounded-full bg-black/60 p-3 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/90 border border-white/15 shadow-xl hover:border-cyan-500/50 cursor-pointer"
+              className="absolute right-2 md:right-6 top-1/2 z-[200] -translate-y-1/2 rounded-full bg-black/70 p-3 text-white backdrop-blur-md transition-all hover:scale-110 hover:bg-black/90 border border-white/15 shadow-xl hover:border-cyan-500/50 cursor-pointer"
             >
               <ChevronRight className="size-5" />
             </button>
@@ -300,7 +317,7 @@ export function CoverflowCarousel({
         )}
       </div>
 
-      {showCaption && active?.title && (
+      {showCaption && active?.title && !renderCard && (
         <div
           key={selected}
           className="mt-6 flex flex-col items-center px-6 text-center duration-300 animate-in fade-in"
@@ -319,7 +336,10 @@ export function CoverflowCarousel({
           {active.meta && active.meta.length > 0 && (
             <dl className="mt-5 flex flex-wrap justify-center gap-3 text-xs">
               {active.meta.map((row) => (
-                <div key={row.label} className="flex items-center gap-2 rounded-full bg-neutral-900/80 border border-white/10 px-3.5 py-1.5 backdrop-blur-sm">
+                <div
+                  key={row.label}
+                  className="flex items-center gap-2 rounded-full bg-neutral-900/80 border border-white/10 px-3.5 py-1.5 backdrop-blur-sm"
+                >
                   <dt className="text-neutral-400 font-medium">{row.label}:</dt>
                   <dd className="font-semibold text-cyan-300">{row.value}</dd>
                 </div>
@@ -337,7 +357,12 @@ export function CoverflowCarousel({
               >
                 Ver Proyecto en Vivo
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
                 </svg>
               </a>
             </div>
@@ -356,7 +381,9 @@ export function CoverflowCarousel({
               onClick={() => goTo(index)}
               className={cn(
                 "h-2 rounded-full transition-all duration-300 cursor-pointer",
-                index === selected ? "w-8 bg-gradient-to-r from-blue-500 to-cyan-400" : "w-2 bg-neutral-700 hover:bg-neutral-500",
+                index === selected
+                  ? "w-8 bg-gradient-to-r from-blue-500 to-cyan-400"
+                  : "w-2 bg-neutral-700 hover:bg-neutral-500",
               )}
             />
           ))}
